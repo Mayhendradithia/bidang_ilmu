@@ -228,5 +228,92 @@
         </div>
 
 
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">Benefit Configuration </h6>
+
+                <a class="btn btn-success btn-icon-split" href="{{ route('benefit.create') }}">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i> <!-- Ikon tambah untuk Create -->
+                    </span>
+                    <span class="text">Create</span>
+                </a>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Caption</th>
+                                <th>Title Benefit</th>
+                                <th>Image</th>
+                                <th>Icon</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Title</th>
+                                <th>Caption</th>
+                                <th>Title Benefit</th>
+                                <th>Image</th>
+                                <th>Icon</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach ($benefits as $benefit)
+                            <tr>
+                                <td>{{ $benefit->title }}</td>
+                                <td>{{ $benefit->caption }}</td>
+                                <td>{{ $benefit->title_benefit }}</td>
+                                <td><img src="{{ asset('/storage/' . $benefit->image) }}" alt="Gambar"
+                                    style="width: 150px; height: auto;"></td>
+                                <td><img src="{{ asset('/storage/' . $benefit->icon) }}" alt="Gambar"
+                                    style="width: 150px; height: auto;"></td>
+                                <td>{{ $benefit->description }}</th>
+
+
+
+                                <td>
+                                   
+                                    <a class="btn btn-primary btn-icon-split" href="{{ route('about.edit', $benefit->id) }}">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-edit"></i>
+                                        </span>
+                                        <span class="text">Update</span>
+                                    </a>
+                                
+
+
+
+
+                                    <form action="{{ route('about.destroy', $about->id) }}" method="POST"
+                                        onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger btn-icon-split mt-2" type="submit">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                            <span class="text">Delete</span>
+                                        </button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
     </div>
 @endsection

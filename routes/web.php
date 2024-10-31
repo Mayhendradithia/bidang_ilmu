@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\premium\dashboardMeController;
 use App\Http\Controllers\admin\Benefit\benefitController;
+use App\Http\Controllers\admin\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,11 +46,10 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('/dashboard/konfigurasi', App\Http\Controllers\admin\KonfigurasiController::class);
     Route::resource('/dashboard/mitra', App\Http\Controllers\admin\MitraController::class);
     Route::resource('benefit', benefitController::class);
-
+    Route::resource('about', App\Http\Controllers\admin\AboutController::class);
 
    
 });
-
 
 
 
