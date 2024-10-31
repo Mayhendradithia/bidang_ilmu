@@ -92,8 +92,8 @@
 
                                     <!-- End Authentication -->
 
-                                    <a class="dropdown-item " href="account-overview.html">Personal Company</a>
-                                    <a class="dropdown-item " href="account-security.html">Portofolio</a>
+                                    <a class="dropdown-item " href="">About Us</a>
+                                    <a class="dropdown-item " href="account-security.html">Why Us ?</a>
                                 </div>
                                 <!-- End Mega Menu -->
                             </li>

@@ -14,16 +14,19 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::all();
-        return view('about.index', compact('about'));
+        $abouts = About::all();
+        return view('admin.about.index', compact('abouts'));
     }
+    
+  
+    
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('about.create');
+        return view('admin.about.create');
     }
 
     /**
@@ -37,28 +40,29 @@ class AboutController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $about = new About();
-        $about->title = $request->title;
-        $about->description = $request->description;
+        $abouts = new About();
+        $abouts->title = $request->title;
+        $abouts->description = $request->description;
 
         if ($request->hasFile('image')) {
-            $about->image = $request->file('image')->store('about_images', 'public');
+            $abouts->image = $request->file('image')->store('about_images', 'public');
         }
 
-        $about->save();
+        $abouts->save();
 
-        return redirect()->route('konfigurasi.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('about.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
+    
     public function edit($id)
     {
-        $about = About::findOrFail($id);
-        return view('about.edit', compact('about'));
+        $abouts = About::findOrFail($id);
+        return view('admin.about.edit', compact('abouts'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
@@ -70,19 +74,19 @@ class AboutController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $about = About::findOrFail($id);
-        $about->title = $request->title;
-        $about->description = $request->description;
+        $abouts = About::findOrFail($id);
+        $abouts->title = $request->title;
+        $abouts->description = $request->description;
 
         if ($request->hasFile('image')) {
             // Hapus gambar lama jika ada
-            if ($about->image) {
-                Storage::disk('public')->delete($about->image);
+            if ($abouts->image) {
+                Storage::disk('public')->delete($abouts->image);
             }
-            $about->image = $request->file('image')->store('about_images', 'public');
+            $abouts->image = $request->file('image')->store('about_images', 'public');
         }
 
-        $about->save();
+        $abouts->save();
 
         return redirect()->route('about.index')->with('success', 'Data berhasil diperbarui');
     }
@@ -92,14 +96,14 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        $about = About::findOrFail($id);
+        $abouts = About::findOrFail($id);
 
         // Hapus gambar jika ada
-        if ($about->image) {
-            Storage::disk('public')->delete($about->image);
+        if ($abouts->image) {
+            Storage::disk('public')->delete($abouts->image);
         }
 
-        $about->delete();
+        $abouts->delete();
 
         return redirect()->route('about.index')->with('success', 'Data berhasil dihapus');
     }

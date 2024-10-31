@@ -66,7 +66,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Konfigurasi:</h6>
                         <a class="collapse-item" href="{{ route('konfigurasi.index') }}">Landing</a>
-                        <a class="collapse-item" href="{{ route('courseAdmin') }}">Kursus</a>
+                        <a class="collapse-item" href="{{ route('about.index') }}">About</a>
                     </div>
                 </div>
             </li>
