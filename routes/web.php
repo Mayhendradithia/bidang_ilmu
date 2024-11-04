@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\aboutUsController;
 use App\Http\Controllers\admin\loginAdminController;
 use App\Http\Controllers\admin\registerAdminController as AdminRegisterAdminController;
 use App\Http\Controllers\admin\superadminController;
@@ -46,7 +47,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('/dashboard/konfigurasi', App\Http\Controllers\admin\KonfigurasiController::class);
     Route::resource('/dashboard/mitra', App\Http\Controllers\admin\MitraController::class);
     Route::resource('benefit', benefitController::class);
-    Route::resource('about', App\Http\Controllers\admin\AboutController::class);
+    Route::resource('/about', App\Http\Controllers\admin\AboutController::class);
+
 
    
 });
@@ -62,7 +64,7 @@ Route::get('/', function () {
 });
 Route::get('/', [indexController::class, 'index'])->name('index');
 
-
+Route::get('/aboutUs', [aboutUsController::class, 'about'])->name('about');
 
 // Proteksi index middleware auth
 Route::get('/register', [registerController::class, 'showRegisterForm'])->name('showRegisterForm');

@@ -69,7 +69,7 @@ class KonfigurasiController extends Controller
          $request->validate([
              'title' => 'required',
              'description' => 'required',
-             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
          ]);
      
          $konfigurasi = Konfigurasi::findOrFail($id);
