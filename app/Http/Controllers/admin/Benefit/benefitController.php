@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\admin\Benefit;
 
 use App\Http\Controllers\Controller;
-use App\Models\benefit;
+use App\Models\Benefit; // Pastikan nama model adalah Benefit
 use Illuminate\Http\Request;
 
-class benefitController extends Controller
-
+class BenefitController extends Controller
 {
     public function index()
     {
-        $benefits = benefit::all();
-        return view('admin.landingAdmin', compact('benefit'));
+        $benefits = Benefit::all(); // Mengambil semua data benefit
+        return view('admin.landingAdmin', compact('benefits')); // Menggunakan 'benefits' untuk konsistensi
     }
 
     public function create()
@@ -27,58 +26,59 @@ class benefitController extends Controller
             'caption' => 'required',
             'title_benefit' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg|max:2048',
-            'icon' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp|max:4096',
+            'icon' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp|max:4096',
         ]);
 
-        $benefits = new benefit($request->only(['title', 'caption', 'title_benefit', 'description','image','icon']));
+        // Membuat objek baru untuk benefit
+        $benefit = new Benefit($request->only(['title', 'caption', 'title_benefit', 'description']));
 
         if ($request->hasFile('image')) {
-            $benefits->image = $request->file('image')->store('images', 'public');
+            $benefit->image = $request->file('image')->store('images', 'public'); // Menyimpan gambar
         }
         if ($request->hasFile('icon')) {
-            $benefits->icon = $request->file('icon')->store('icons', 'public');
+            $benefit->icon = $request->file('icon')->store('icons', 'public'); // Menyimpan ikon
         }
 
-        $benefits->save();
+        $benefit->save(); // Menyimpan data ke database
 
         return redirect()->route('konfigurasi.index')->with('success', 'Post created successfully.');
     }
 
-
-    public function edit(benefit $benefit)
+    public function edit(Benefit $benefit) // Menggunakan tipe hinting untuk Benefit
     {
         return view('admin.benefit.edit', compact('benefit'));
     }
 
-    public function update(Request $request, benefit $benefit)
+    public function update(Request $request, Benefit $benefit)
     {
         $request->validate([
             'title' => 'required',
             'caption' => 'required',
             'title_benefit' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg|max:2048',
-            'icon' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp|max:4096',
+            'icon' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp|max:4096',
         ]);
 
+        // Mengisi data yang ada pada model benefit
         $benefit->fill($request->only(['title', 'caption', 'title_benefit', 'description']));
 
         if ($request->hasFile('image')) {
-            $benefit->image = $request->file('image')->store('images', 'public');
+            $benefit->image = $request->file('image')->store('images', 'public'); // Update image jika ada file baru
         }
         if ($request->hasFile('icon')) {
-            $benefit->icon = $request->file('icon')->store('icons', 'public');
+            $benefit->icon = $request->file('icon')->store('icons', 'public'); // Update icon jika ada file baru
         }
 
-        $benefit->save();
+        $benefit->save(); // Menyimpan perubahan
 
         return redirect()->route('konfigurasi.index')->with('success', 'Post updated successfully.');
     }
 
-    public function destroy(benefit $benefit)
+    public function destroy(Benefit $benefit)
     {
-        $benefit->delete();
+        $benefit->delete(); // Menghapus data benefit
         return redirect()->route('konfigurasi.index')->with('success', 'Post deleted successfully.');
     }
 }

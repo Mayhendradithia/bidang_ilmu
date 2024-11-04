@@ -11,7 +11,7 @@ class aboutUsController extends Controller
 
     public function about()
     {
-        $about=About::all();
+        $about=About::first();
         return view('About Us.about',compact('about'));
     }
 }

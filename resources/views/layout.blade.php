@@ -81,7 +81,7 @@
                             <!-- Account -->
                             <li class="hs-has-sub-menu nav-item">
                                 <a id="accountMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle "
-                                    href="#" role="button" aria-expanded="false">About Us</a>
+                                    href="" role="button" aria-expanded="false">About Us</a>
 
                                 <!-- Mega Menu -->
                                 <div class="hs-sub-menu dropdown-menu" aria-labelledby="accountMegaMenu"
@@ -92,7 +92,7 @@
 
                                     <!-- End Authentication -->
 
-                                    <a class="dropdown-item " href="">About Us</a>
+                                    <a class="dropdown-item " href="{{ route('about') }}">About Us</a>
                                     <a class="dropdown-item " href="account-security.html">Why Us ?</a>
                                 </div>
                                 <!-- End Mega Menu -->

@@ -28,142 +28,58 @@
             </div>
             <!-- End Row -->
 
-            <!-- Mitra -->
-            <div class="js-swiper-hero-clients swiper text-center">
-                <div class="swiper-wrapper">
-                    <!-- Looping semua data mitra -->
-
-                    @foreach ($mitra as $mitras)
-                        <div class="swiper-slide">
-                            <img class="avatar logo-lg logo-4x" src="{{ asset('storage/' . $mitras->image) }}"
-                                alt="Logo">
-                        </div>
-                    @endforeach
-
-                </div>
+         <!-- Mitra -->
+<!-- Mitra -->
+<div class="js-swiper-hero-clients swiper text-center">
+    <div class="swiper-wrapper">
+        <!-- Looping semua data mitra -->
+        @foreach ($mitra as $mitras)
+            <div class="swiper-slide text-center">
+                <img src="{{ asset('storage/' . $mitras->image) }}" alt="Logo" class="img-fluid"
+                    style="max-width: 100px; max-height: 100px;">
             </div>
-
-            <!-- End Swiper Slider -->
-        </div>
-        <!-- End Hero -->
-        @foreach ($benefit as $benefits)
-            <!-- Feature Nav -->
-            <div class="container content-space-1">
-                <!-- Heading Benefit -->
-                <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-                    <span class="text-cap">{{ $benefits->title }}</span>
-                    <h2>{{ $benefits->caption }}</h2>
-                </div>
-                <!-- End Heading -->
-
-                <div class="row align-items-lg-center">
-                    <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
-                        <!-- Nav Scroller -->
-                        <div class="js-nav-scroller hs-nav-scroller-horizontal">
-                            <span class="hs-nav-scroller-arrow-prev" style="display: none;">
-                                <a class="hs-nav-scroller-arrow-link" href="javascript:;">
-                                    <i class="bi-chevron-left"></i>
-                                </a>
-                            </span>
-
-                            <span class="hs-nav-scroller-arrow-next" style="display: none;">
-                                <a class="hs-nav-scroller-arrow-link" href="javascript:;">
-                                    <i class="bi-chevron-right"></i>
-                                </a>
-                            </span>
-
-                            <!-- Nav Pills -->
-                            <ul class="nav nav-lg nav-pills nav-pills-shadow flex-lg-column gap-lg-1 p-3 " id="featuresTab"
-                                role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" href="#featuresOne" id="featuresOne-tab" data-bs-toggle="tab"
-                                        data-bs-target="#featuresOne" role="tab" aria-controls="featuresOne"
-                                        aria-selected="true" style="min-width: 20rem;">
-                                        <!-- Media -->
-                                        <div class="d-flex align-items-start">
-                                          <!-- Icon -->
-                                          <img src="{{ asset('storage/' . $benefits->icon) }}" alt="icon" width="440" height="84" class="me-2">
-                                          
-                                          <!-- Text Content -->
-                                          <div class="text-wrap">
-                                              <h4 class="mb-1">{{ $benefits->title_benefit }}</h4>
-                                              <p class="text-body mb-0">{{ $benefits->description }}</p>
-                                          </div>
-                                      </div>
-                                        <!-- End Media -->
-                                    </a>
-                                </li>
-
-
-
-
-                            </ul>
-                            <!-- End Nav Pills -->
-                        </div>
-                        <!-- End Nav Scroller -->
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-lg-7 order-lg-1">
-                        <!-- Tab Content -->
-                        <div class="tab-content" id="featuresTabContent">
-                            <div class="tab-pane fade show active" id="featuresOne" role="tabpanel"
-                                aria-labelledby="featuresOne-tab">
-                                <!-- Browser Device -->
-                                <figure class="device-browser">
-
-                                    <div class="device-browser-frame">
-                                        <img class="device-browser-img" src="{{ asset('storage/' . $benefits->image) }}"
-                                            alt="Image Description">
-                                    </div>
-                                </figure>
-                                <!-- End Browser Device -->
-                            </div>
         @endforeach
-        <div class="tab-pane fade" id="featuresTwo" role="tabpanel" aria-labelledby="featuresTwo-tab">
-            <!-- Browser Device -->
-            <figure class="device-browser">
-                <div class="device-browser-header">
-                    <div class="device-browser-header-btn-list">
-                        <span class="device-browser-header-btn-list-btn"></span>
-                        <span class="device-browser-header-btn-list-btn"></span>
-                        <span class="device-browser-header-btn-list-btn"></span>
+    </div>
+</div>
+<!-- End Swiper Slider -->
+
+<!-- Memberikan sedikit space di sini -->
+<div id="featuresSection" class="container content-space-t-2 content-space-b-md-2 content-space-lg-3 mt-3"> <!-- Menggunakan mt-3 untuk memberi space -->
+    <!-- Heading -->
+    <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2 class="h1">{{ $benefit->first()->title }}</h2> <!-- Mengambil caption dari item pertama -->
+        <p>{{ $benefit->first()->caption }}</p> <!-- Mengambil caption dari item pertama -->
+    </div>
+    <!-- End Heading -->
+
+    <div class="row gx-3">
+        @foreach ($benefit as $benefits)
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0"> <!-- Setiap kartu dalam kolom -->
+                <!-- Card -->
+                <a class="card card-sm card-transition h-100" href="{{ route('about') }}">
+                    <div class="card-body">
+                        <span class="svg-icon text-primary mb-3 d-block text-start">
+                            <img src="{{ asset('storage/' . $benefits->icon) }}" alt="icon" width="64" height="64" class="me-2">
+                        </span>
+                        <h4 class="card-title">{{ $benefits->title_benefit }}</h4>
+                        <p class="card-text text-body">{{ $benefits->description }}</p>
                     </div>
-                    <div class="device-browser-header-browser-bar">www.htmlstream.com/front/</div>
-                </div>
-
-                <div class="device-browser-frame">
-                    <img class="device-browser-img" src="assets/img/1618x1010/img2.jpg" alt="Image Description">
-                </div>
-            </figure>
-            <!-- End Browser Device -->
-        </div>
-
-        <div class="tab-pane fade" id="featuresThree" role="tabpanel" aria-labelledby="featuresThree-tab">
-            <!-- Browser Device -->
-            <figure class="device-browser">
-                <div class="device-browser-header">
-                    <div class="device-browser-header-btn-list">
-                        <span class="device-browser-header-btn-list-btn"></span>
-                        <span class="device-browser-header-btn-list-btn"></span>
-                        <span class="device-browser-header-btn-list-btn"></span>
+                    <div class="card-footer pt-0">
+                        <span class="card-link">Selengkapnya <i class="bi-chevron-right small ms-1"></i></span>
                     </div>
-                    <div class="device-browser-header-browser-bar">www.htmlstream.com/front/</div>
-                </div>
+                </a>
+                <!-- End Card -->
+            </div>
+        @endforeach
+    </div>
+</div>
+<!-- End Row -->
 
-                <div class="device-browser-frame">
-                    <img class="device-browser-img" src="assets/img/1618x1010/img4.jpg" alt="Image Description">
-                </div>
-            </figure>
-            <!-- End Browser Device -->
-        </div>
-        </div>
-        <!-- End Tab Content -->
-        </div>
-        <!-- End Col -->
-        </div>
-        <!-- End Row -->
-        </div>
+<!-- End Row -->
+
+            <!-- Browser Device -->
+          
+       
         <!-- End Feature Nav -->
 
         <!-- Features Nav -->

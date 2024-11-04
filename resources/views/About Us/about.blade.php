@@ -7,15 +7,15 @@
     <div class="w-lg-75 text-center mx-lg-auto">
       <!-- Heading -->
       <div class="mb-5 mb-md-10">
-        <h1 class="display-4">About Us</h1>
-        <p class="lead">Front is a web company that builds websites. Businesses of every size—from new startups to public companies—use our theme to build and manage their businesses online.</p>
+        <h1 class="display-4">{{ $about->title }}</h1>
+        <p class="lead mt-5">{{ $about->description }}</p>
       </div>
       <!-- End Heading -->
     </div>
 
     <div class="row gx-3">
       <div class="col mb-3">
-        <div class="bg-img-start" style="background-image: url(assets/img/480x320/img17.jpg); height: 15rem;"></div>
+        <div class="bg-img-start" "><img style=" height: 15rem;" src="{{ asset('/storage/' . $about->image) }}"></div>
       </div>
       <!-- End Col -->
 
