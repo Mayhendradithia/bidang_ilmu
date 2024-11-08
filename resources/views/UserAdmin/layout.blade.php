@@ -27,7 +27,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashbord') }}">
@@ -65,8 +65,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Materi</h6>
-                        <a class="collapse-item" href="">Kursus</a>
-                        <a class="collapse-item" href="">Mata Pelajaran</a>
+                        <a class="collapse-item" href="{{route ('kategoris.index') }}">Kategori Pelajaran</a>
+                        <a class="collapse-item" href="">Materi</a>
                     </div>
                 </div>
             </li>

@@ -18,6 +18,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\premium\dashboardMeController;
 use App\Http\Controllers\admin\Benefit\benefitController;
 use App\Http\Controllers\admin\AboutController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('/dashboard/mitra', App\Http\Controllers\admin\MitraController::class);
     Route::resource('benefit', benefitController::class);
     Route::resource('/about', App\Http\Controllers\admin\AboutController::class);
-
+    Route::resource('kategoris', KategoriController::class);
 
    
 });
