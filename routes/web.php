@@ -49,7 +49,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('/dashboard/mitra', App\Http\Controllers\admin\MitraController::class);
     Route::resource('benefit', benefitController::class);
     Route::resource('/about', App\Http\Controllers\admin\AboutController::class);
-    Route::resource('kategoris', KategoriController::class);
+
+
 
    
 });
@@ -88,6 +89,7 @@ Route::get('/courseOverview', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/courseOverview', [courseViewController::class, 'courseOverview'])->name('courseOverview');
     Route::get('/dashboardDosen', [dashboardMeController::class, 'dashboardDosen'])->name('dashboardDosen');
+    Route::resource('kategoris', KategoriController::class);
    
 });
 

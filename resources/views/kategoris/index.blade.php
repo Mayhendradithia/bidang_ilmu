@@ -12,5 +12,11 @@
             @method('DELETE')
             <button type="submit">Hapus</button>
         </form>
+
+
+        
     @endforeach
 @endsection
+
+
+
