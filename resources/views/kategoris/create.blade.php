@@ -16,4 +16,20 @@
             <a href="{{ route('kategoris.index') }}" class="btn btn-secondary ms-2">Batal</a>
         </form>
     </div>
+
+    <!-- SweetAlert2 JavaScript -->
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Kategori Berhasil Ditambahkan',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                // Redirect ke halaman index setelah SweetAlert
+                window.location = "{{ route('kategoris.index') }}";
+            });
+        </script>
+    @endif
 @endsection

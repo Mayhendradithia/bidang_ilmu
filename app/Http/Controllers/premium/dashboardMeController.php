@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\premium;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +12,11 @@ class dashboardMeController extends Controller
 
     public function dashboardDosen()
     {
-        return view('UserAdmin.index');
+
+        $totalKategori = Kategori::count();
+
+        // Kirim data ke view
+        return view('UserAdmin.index', compact('totalKategori'));
     }
 }
 
