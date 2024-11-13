@@ -11,6 +11,7 @@
     <title>Dashbord Binar Ilmu</title>
 
     <!-- Custom fonts for this template-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -19,6 +20,10 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <!-- SweetAlert2 CDN -->
+    
+
+
 </head>
 
 <body id="page-top">
@@ -143,9 +148,12 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="{{ asset('img/undraw_rocket.svg') }}" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+                <img class="sidebar-card-illustration mb-2" src="{{ asset('img/undraw_rocket.svg') }}"
+                    alt="...">
+                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components,
+                    and more!</p>
+                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
+                    Pro!</a>
             </div>
         </ul>
 
@@ -183,7 +191,7 @@
                         </li>
                     </ul>
                 </nav>
-                
+
                 @yield('content')
                 <!--Main Content-->
             </div>
@@ -212,7 +220,8 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <form action="{{ route('logoutAdmin') }}" method="POST" id="logoutForm">
                         @csrf
-                        <button class="btn btn-primary" onclick="document.getElementById('logoutForm').submit();">Logout</button>
+                        <button class="btn btn-primary"
+                            onclick="document.getElementById('logoutForm').submit();">Logout</button>
                     </form>
                 </div>
             </div>

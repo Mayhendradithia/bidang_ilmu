@@ -19,14 +19,25 @@ class KategoriController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
+    try {
+        // Validasi dan simpan kategori
         $request->validate([
             'nama' => 'required|string|max:255',
         ]);
-    
-        Kategori::create($request->only('nama'));
-        return redirect()->route('kategoris.index')->with('success', 'Kategori berhasil ditambahkan.');
+
+        // Simpan data kategori
+        Kategori::create([
+            'nama' => $request->nama,
+        ]);
+
+        // Kirimkan pesan sukses dan redirect ke halaman index
+        return redirect()->route('kategoris.create')->with('success', 'Kategori berhasil ditambahkan!');
+    } catch (\Exception $e) {
+        // Kirimkan pesan error jika ada kesalahan
+        return redirect()->route('kategoris.create')->with('error', 'Terjadi kesalahan, kategori gagal ditambahkan.');
     }
+}
 
     public function show(kategori $kategori)
     {
@@ -38,15 +49,15 @@ class KategoriController extends Controller
         return view('kategoris.edit', compact('kategori'));
     }
 
-    public function update(Request $request, Kategori $kategori)
-    {
-        $request->validate([
-            'nama' => 'required|string|max:255',
-        ]);
+    public function update(Request $request, $id)
+{
+    $kategori = Kategori::findOrFail($id);
+    $kategori->nama = $request->nama;
+    $kategori->save();
 
-        $kategori->update($request->all());
-        return redirect()->route('kategoris.index')->with('success', 'Kategori berhasil diperbarui.');
-    }
+    return redirect()->route('kategoris.index')->with('success', 'Kategori Berhasil Diperbarui');
+}
+
 
     public function destroy(Kategori $kategori)
     {
