@@ -2,23 +2,16 @@
 
 use App\Http\Controllers\aboutUsController;
 use App\Http\Controllers\admin\loginAdminController;
-use App\Http\Controllers\admin\registerAdminController as AdminRegisterAdminController;
-use App\Http\Controllers\admin\superadminController;
-use App\Http\Controllers\AllCourseController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\courseViewController;
 use App\Http\Controllers\gridCourseController;
-use App\Http\Controllers\priceDashbordController;
-use App\Http\Controllers\registerAdminController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\ItemController;
 use App\Http\Controllers\premium\dashboardMeController;
 use App\Http\Controllers\admin\Benefit\benefitController;
-use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\MateriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,11 +42,12 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('/dashboard/mitra', App\Http\Controllers\admin\MitraController::class);
     Route::resource('benefit', benefitController::class);
     Route::resource('/about', App\Http\Controllers\admin\AboutController::class);
-
-
-
-   
+    Route::resource('kategoris', KategoriController::class);
+    Route::get('/generate-report', [App\Http\Controllers\admin\ReportController::class, 'generateReport'])->name('report.generate');
 });
+
+
+
 
 
 
@@ -89,14 +83,6 @@ Route::get('/courseOverview', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/courseOverview', [courseViewController::class, 'courseOverview'])->name('courseOverview');
     Route::get('/dashboardDosen', [dashboardMeController::class, 'dashboardDosen'])->name('dashboardDosen');
-    Route::resource('kategoris', KategoriController::class);
-   
+    
+    Route::resource('materi', MateriController::class);
 });
-
-
-
-
-
-
-//Premium
-

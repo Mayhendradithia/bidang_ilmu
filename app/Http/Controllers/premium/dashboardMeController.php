@@ -13,10 +13,9 @@ class dashboardMeController extends Controller
     public function dashboardDosen()
     {
 
-        $totalKategori = Kategori::count();
 
         // Kirim data ke view
-        return view('UserAdmin.index', compact('totalKategori'));
+        return view('UserAdmin.index');
     }
 }
 

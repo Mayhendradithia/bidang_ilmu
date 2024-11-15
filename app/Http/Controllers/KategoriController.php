@@ -10,12 +10,12 @@ class KategoriController extends Controller
     public function index()
     {
         $kategoris = Kategori::all();
-        return view('kategoris.index', compact('kategoris'));
+        return view('admin.kategoris.index', compact('kategoris'));
     }
 
     public function create()
     {
-        return view('kategoris.create');
+        return view('admin.kategoris.create');
     }
 
     public function store(Request $request)
@@ -39,14 +39,11 @@ class KategoriController extends Controller
     }
 }
 
-    public function show(kategori $kategori)
-    {
-        return view('kategoris.show', compact('kategori'));
-    }
+    
 
     public function edit(Kategori $kategori)
     {
-        return view('kategoris.edit', compact('kategori'));
+        return view('admin.kategoris.edit', compact('kategori'));
     }
 
     public function update(Request $request, $id)
@@ -62,6 +59,6 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori)
     {
         $kategori->delete();
-        return redirect()->route('kategoris.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->route('kategoris.destroy')->with('success', 'Kategori berhasil dihapus.');
     }
 }

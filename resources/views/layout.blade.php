@@ -12,7 +12,7 @@
     <title>Belajar atau Kursus Semakin Mudah Bersama BidangIlmu</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/BrandLogo.svg') }}" type="image/x-icon">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">

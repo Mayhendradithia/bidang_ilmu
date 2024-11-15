@@ -1,6 +1,6 @@
-@extends('UserAdmin.layout')
+@extends('admin.layoutAdmin')
 
-@section('main')
+@section('content')
     <div class="container mt-5">
         <h1 class="mb-4">Edit Kategori Pelajaran</h1>
 

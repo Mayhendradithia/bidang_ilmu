@@ -22,7 +22,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Total Kategori Materi</div>
                                         <!-- Menampilkan total kategori -->
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalKategori }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="bi bi-card-checklist fa-2x text-gray-300"></i>

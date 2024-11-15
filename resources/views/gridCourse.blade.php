@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../favicon.ico">
@@ -56,7 +56,7 @@
                                     </button>
                                 </div>
                                 <!-- End Input Card -->
-                              </form>
+                            </form>
                         </div>
                         <!-- End Col -->
 
@@ -75,116 +75,110 @@
             <div class="container content-space-sm-2">
                 <!-- Title -->
                 <div class="w-md-75 text-center mx-md-auto mb-9">
-                    <h2>Featured courses</h2>
-                    <p>Discover your perfect program in our courses.</p>
+                    <h2>Course Tersedia</h2>
+                    <p>Pilih Course Yang Sesuai Dengan BidangMu.</p>
                 </div>
                 <!-- End Title -->
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5">
-                    
+
                     <!-- End Col -->
 
                     <div class="col mb-5">
-                      <!-- Card -->
-                      <div class="card card-bordered h-100">
-                          <!-- Card Pinned -->
-                          <div class="card-pinned">
-                              <img class="card-img-top" src="../assets/svg/components/card-15.svg"
-                                  alt="Image Description">
+                        <!-- Card -->
+                        <div class="card card-bordered h-100">
+                            <!-- Card Pinned -->
+                            <div class="card-pinned">
+                                <img class="card-img-top" src="../assets/svg/components/card-15.svg"
+                                    alt="Image Description">
 
-                              <div class="card-pinned-top-start">
-                                  <small class="badge bg-success rounded-pill">Bestseller</small>
-                              </div>
+                                <div class="card-pinned-top-start">
+                                    <small class="badge bg-success rounded-pill">Rekomendasi</small>
+                                </div>
 
-                              <div class="card-pinned-bottom-start">
-                                  <div class="d-flex align-items-center flex-wrap">
-                                      <!-- Rating -->
-                                      <div class="d-flex gap-1">
-                                          <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
-                                              width="16">
-                                          <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
-                                              width="16">
-                                          <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
-                                              width="16">
-                                          <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
-                                              width="16">
-                                          <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
-                                              width="16">
-                                      </div>
-                                      <!-- End Rating -->
-                                      <div class="ms-1">
-                                          <span class="fw-semi-bold text-white me-1">4.91</span>
-                                          <span class="text-white-70">(1.5k+ reviews)</span>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- End Card Pinned -->
+                                <div class="card-pinned-bottom-start">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <!-- Rating -->
+                                        <div class="d-flex gap-1">
+                                            <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
+                                                width="16">
+                                            <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
+                                                width="16">
+                                            <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
+                                                width="16">
+                                            <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
+                                                width="16">
+                                            <img src="../assets/svg/illustrations/star.svg" alt="Review rating"
+                                                width="16">
+                                        </div>
+                                        <!-- End Rating -->
+                                        <div class="ms-1">
+                                            <span class="fw-semi-bold text-white me-1">4.91</span>
+                                            <span class="text-white-70">(1.5k+ reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Card Pinned -->
 
-                          <!-- Card Body -->
-                          <div class="card-body">
-                              <small class="card-subtitle">Code</small>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <small class="card-subtitle">Matematika</small>
 
-                              <div class="mb-3">
-                                  <h3 class="card-title">
-                                      <a class="text-dark" >Complete Python Bootcamp: Go from
-                                          zero to hero in Python</a>
-                                  </h3>
-                              </div>
+                                <div class="mb-3">
+                                    <h3 class="card-title">
+                                        <a class="text-dark">Complete Python Bootcamp: Go from
+                                            zero to hero in Python</a>
+                                    </h3>
+                                </div>
 
-                              <div class="row align-items-center">
-                                  <div class="col">
-                                      <div class="avatar-group avatar-group-xs">
-                                          <a class="avatar avatar-xs avatar-circle" data-toggle="tooltip"
-                                              data-placement="top" title="Nataly Gaga">
-                                              <img class="avatar-img" src="../assets/img/160x160/img3.jpg"
-                                                  alt="Image Description">
-                                          </a>
-                                      </div>
-                                  </div>
-                                  <!-- End Col -->
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <div class="avatar-group avatar-group-xs">
+                                            <a class="avatar avatar-xs avatar-circle" data-toggle="tooltip"
+                                                data-placement="top" title="Nataly Gaga">
+                                                <img class="avatar-img" src="../assets/img/160x160/img3.jpg"
+                                                    alt="Image Description"><a class="link ms-3 mt-1" href="author-profile.html">Christina Kray</a>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- End Col -->
 
-                                  <div class="col-auto">
-                                      <ul class="list-inline list-separator small ms-auto">
-                                          <li class="list-inline-item">
-                                              <i class="bi-book me-1"></i> 10 lessons
-                                          </li>
-                                          <li class="list-inline-item">
-                                              <i class="bi-clock me-1"></i> 3h 25m
-                                          </li>
-                                      </ul>
-                                  </div>
-                                  <!-- End Col -->
-                              </div>
-                              <!-- End Row -->
-                          </div>
-                          <!-- End Card Body -->
+                                    <div class="col-auto">
+                                        <ul class="list-inline list-separator small ms-auto">
+                                            <li class="list-inline-item">
+                                                <i class="bi-clock me-1"></i> 3h 25m
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Col -->
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Card Body -->
 
-                          <!-- Card Footer -->
-                          <div class="card-footer pt-0">
-                              <div class="d-flex justify-content-between align-items-center">
-                                  <div class="me-2">
-                                      <span class="d-block text-muted small"><del>$114.99</del></span>
-                                      <h5 class="card-title">$99.99</h5>
-                                  </div>
+                            <!-- Card Footer -->
+                            <div class="card-footer pt-0 ">
+                                <div class="d-flex justify-content-between align-items-center float-end">
 
-                                  @auth
-                                      <!-- Jika user sudah login, arahkan ke course-overview.html -->
-                                      <a class="btn btn-primary btn-sm btn-transition"
-                                          href="{{ route('courseOverview') }}">Preview</a>
-                                  @else
-                                      <!-- Jika user belum login, arahkan ke halaman login -->
-                                      <a class="btn btn-primary btn-sm btn-transition"
-                                          href="{{ route('showLoginForm') }}">Preview</a>
-                                  @endauth
 
-                              </div>
-                          </div>
-                          <!-- End Card Footer -->
-                      </div>
-                      <!-- End Card -->
-                  </div>
-        
+                                    @auth
+                                        <!-- Jika user sudah login, arahkan ke course-overview.html -->
+                                        <a class="btn btn-primary btn-sm btn-transition "
+                                            href="{{ route('courseOverview') }}">Preview</a>
+                                    @else
+                                        <!-- Jika user belum login, arahkan ke halaman login -->
+                                        <a class="btn btn-primary btn-sm btn-transition "
+                                            href="{{ route('showLoginForm') }}">Preview</a>
+                                    @endauth
+
+                                </div>
+                            </div>
+                            <!-- End Card Footer -->
+                        </div>
+                        <!-- End Card -->
+                    </div>
+
                 </div>
                 <!-- End Row -->
 

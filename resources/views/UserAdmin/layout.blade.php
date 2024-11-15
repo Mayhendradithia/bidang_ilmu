@@ -73,8 +73,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Materi</h6>
-                        <a class="collapse-item" href="{{route ('kategoris.index') }}">Kategori Pelajaran</a>
-                        <a class="collapse-item" href="">Materi</a>
+                        <a class="collapse-item" href="{{ route('materi.index') }}">Materi</a>
                     </div>
                 </div>
             </li>
