@@ -8,7 +8,7 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i> <!-- Ikon tambah untuk Create -->
                 </span>
-                <span class="text">Tambah Kategori</span>
+                <span class="text">Tambah Materi</span>
             </a>
         </div>
         <div class="card-body">

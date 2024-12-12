@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" dir="">
 
 <!-- Mirrored from htmlstream.com/preview/front-v4.2/html/landing-app-saas.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Aug 2022 18:15:35 GMT -->
@@ -76,27 +76,6 @@
                                 style="min-width: 6rem;">Home</a>
                             <!-- End Home -->
 
-
-
-                            <!-- Account -->
-                            <li class="hs-has-sub-menu nav-item">
-                                <a id="accountMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle "
-                                    href="" role="button" aria-expanded="false">About Us</a>
-
-                                <!-- Mega Menu -->
-                                <div class="hs-sub-menu dropdown-menu" aria-labelledby="accountMegaMenu"
-                                    style="min-width: 14rem;">
-                                    <!-- Authentication -->
-
-
-
-                                    <!-- End Authentication -->
-
-                                    <a class="dropdown-item " href="{{ route('about') }}">About Us</a>
-                                    <a class="dropdown-item " href="account-security.html">Why Us ?</a>
-                                </div>
-                                <!-- End Mega Menu -->
-                            </li>
                             <li class="hs-has-mega-menu nav-item">
                                 <a id="landingsMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle "
                                     aria-current="page" href="#" role="button" aria-expanded="false">New
@@ -185,33 +164,12 @@
                                 </div>
                                 <!-- End Mega Menu -->
                             </li>
-                            <!-- End Account -->
 
-                            <!-- Pages -->
+                            <!-- Account -->
+                            
+                                <a id="accountMegaMenu" class="hs-mega-menu-invoker nav-link toggle "
+                                    href="{{ route('about') }}" role="button" aria-expanded="false">About Us</a>
 
-                            <!-- End Pages -->
-
-                            <!-- Blog -->
-                            <li class="hs-has-sub-menu nav-item">
-                                <a id="" class="hs-mega-menu-invoker nav-link dropdown-toggle "
-                                    href="#" role="button" aria-expanded="false">Blog</a>
-
-                                <!-- Mega Menu -->
-                                <div class="hs-sub-menu dropdown-menu" aria-labelledby="" style="min-width: 14rem;">
-                                    <a class="dropdown-item " href="blog-journal.html">Journal</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item " href="blog-article.html">Article</a>
-                                    <a class="dropdown-item " href="blog-author-profile.html">Author Profile</a>
-                                </div>
-                                <!-- End Mega Menu -->
-                            </li>
-                            <!-- End Blog -->
-
-                            <!-- Portfolio -->
-                    
-                            <!-- End Portfolio -->
-
-                           
                             <li class="hs-has-sub-menu nav-item">
                                 <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle "
                                      role="button" aria-expanded="false">Profile</a>
@@ -269,7 +227,7 @@
         </a>
         <!-- End Logo -->
 
-        <p class="small text-muted mb-0">2025 Adithia Putra.</p>
+        <p class="small text-muted mb-0">2025 Team Intern Adi Sanggoro</p>
     </footer>
     <!-- ========== END FOOTER ========== -->
 

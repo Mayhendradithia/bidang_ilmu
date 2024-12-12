@@ -4,7 +4,7 @@
     <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
     <h1 class="mb-4">Tambah Materi</h1>
     <div class="border rounded p-4 bg-light">
-        <form action="{{ route('materi.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('materi.store') }}" method="POST">
             @csrf
             <div class="row mb-3">
                 <div class="col-md-6">
@@ -33,12 +33,11 @@
                 <textarea name="description" id="description" class="form-control form-control-sm" placeholder="Description" rows="4" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="video" class="form-label">Video File</label>
-                <input type="file" name="video" id="video" class="form-control form-control-sm">
+                <label for="video" class="form-label">Video Link</label>
+                <input type="url" name="video" id="video" class="form-control form-control-sm" placeholder="https://example.com/video" required>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
         </form>
-        
     </div>
 
     <!-- Tambahkan CKEditor Script -->

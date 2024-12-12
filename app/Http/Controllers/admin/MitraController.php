@@ -49,28 +49,36 @@ public function store(Request $request)
     return redirect()->route('konfigurasi.index')->with('success', 'Konfigurasi berhasil diupdate.');
 }
 
+public function edit($id)
+{
+    $mitra = Mitra::findOrFail($id); // Mengambil data berdasarkan ID
+    return view('admin.mitra.edit', compact('mitra')); // Kirim data ke view
+}
 
     // Fungsi untuk mengupdate gambar
-    public function update(Request $request, Mitra $mitra)
-    {
-        $validatedData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:2048'
-        ]);
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'image' => 'nullable|image|max:2048', // Validasi untuk gambar
+    ]);
 
-        // Hapus gambar lama jika ada
-        if ($mitra->image) {
+    $mitra = Mitra::findOrFail($id);
+
+    if ($request->hasFile('image')) {
+        // Menghapus gambar lama jika ada
+        if ($mitra->image && Storage::exists($mitra->image)) {
             Storage::delete($mitra->image);
         }
 
-        // Upload gambar baru
-        if ($request->hasFile('image')) {
-            $mitra->image = $request->file('image')->store('mitra_images');
-        }
-
-        $mitra->save();
-
-        return redirect()->back()->with('success', 'Gambar berhasil diupdate');
+        // Simpan gambar baru
+        $filePath = $request->file('image')->store('mitra_images');
+        $mitra->image = $filePath;
     }
+
+    $mitra->save();
+
+    return redirect()->route('konfigurasi.index')->with('success', 'Mitra berhasil diperbarui!');
+}
 
     // Fungsi untuk menghapus gambar
     public function destroy(Mitra $mitra)
